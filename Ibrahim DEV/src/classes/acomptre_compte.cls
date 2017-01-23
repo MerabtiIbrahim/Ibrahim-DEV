@@ -12,6 +12,7 @@ public class acomptre_compte {
     public rubrique__c rubrique_a_inserer {get; set;}
     public acomptre_compte(){
    rubrique_a_inserer =  new rubrique__c ();
+   system.debug('This is just to try git');
     }
 
     public void save(){
