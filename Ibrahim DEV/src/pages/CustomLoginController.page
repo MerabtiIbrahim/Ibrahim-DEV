@@ -1,0 +1,32 @@
+<apex:page docType="html-5.0" controller="CustomLoginController" showHeader="false" sidebar="false" standardStylesheets="false">
+    <div>
+    <apex:form >
+      <fieldset>
+        <div >
+          <legend>Login</legend>
+        </div>
+        <div>
+          <!-- Username -->
+          <apex:outputLabel value="Username"/>
+          <div>
+              <apex:inputText value="{!username}" />
+          </div>
+        </div>
+        <div>
+          <!-- Password-->
+          <apex:outputLabel value="Password" />
+          <div>
+            <apex:inputSecret value="{!password}"/>
+          </div>
+        </div>
+        <div>
+          <!-- Button -->
+          <div></div>
+          <div>
+            <apex:commandButton action="{!login}" value="Login"/>
+          </div>
+        </div>
+      </fieldset>
+    </apex:form>
+    </div>
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="UploadFilesAppController">
+    <apex:form >
+        
+        <apex:pageBlock title="Files upload application" id="fua">
+            <apex:messages />
+            <apex:pageBlockSection title="File 1" id="f1">
+            <apex:inputFile value="{!attach1.body}" fileName="{!attach1.name}" >
+            </apex:inputFile>
+            </apex:pageBlockSection>
+              <apex:pageBlockSection title="File 2" id="f2">
+            <apex:inputFile value="{!attach2.body}" fileName="{!attach2.name}" >
+            </apex:inputFile>
+            </apex:pageBlockSection>
+              <apex:pageBlockSection title="File 3" id="f3">
+            <apex:inputFile value="{!attach3.body}" fileName="{!attach3.name}" >
+            </apex:inputFile>
+            </apex:pageBlockSection>
+            
+            <apex:commandButton value="save files" action="{!UploadFiles}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

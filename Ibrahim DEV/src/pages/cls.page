@@ -1,0 +1,5 @@
+<apex:page controller="clsontroller">
+<apex:image value="{!$Resource.Android_logo}" width="100%" height="100px"/>
+ <apex:pageBlock title="nominate contacts">
+ </apex:pageBlock>
+</apex:page>

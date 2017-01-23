@@ -1,0 +1,21 @@
+<aura:component controller="contractCollectorController" access="global"   implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+	
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="contracts" type="Contract[]"/>
+    <aura:attribute name="theContract" 
+        type="Lead" 
+        default="{ 'sobjectType': 'Contract',
+                   'Status': '',
+                   'ContractTerm': ''
+                 }"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="updateContractTable" event="c:ContractItemUpdate"
+   action="{!c.handleUpdateContract}"/>
+
+    <ui:inputSelect >
+        <ui:inputSelectOption text="Red"/>
+        <ui:inputSelectOption text="Green" value="true"/>
+        <ui:inputSelectOption text="Blue"/>
+</ui:inputSelect>
+    <c:contractList contracts="{!v.contracts}"/>
+</aura:component>
