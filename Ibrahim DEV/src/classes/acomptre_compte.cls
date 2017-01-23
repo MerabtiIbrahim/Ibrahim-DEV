@@ -13,6 +13,7 @@ public class acomptre_compte {
     public acomptre_compte(){
    rubrique_a_inserer =  new rubrique__c ();
    system.debug('This is just to try git');
+   system.debug('This working actually');
     }
 
     public void save(){
