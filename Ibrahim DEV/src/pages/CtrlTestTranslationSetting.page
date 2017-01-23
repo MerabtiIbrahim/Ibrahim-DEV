@@ -1,8 +1,0 @@
-<apex:page controller="TestTranslationSetting">
-    <apex:form >
-     <apex:commandButton value="Click to test" action="{!testPoste}"  reRender="resfresh"/>
-        <apex:pageBlock id="resfresh">
-           <apex:outputField value="{!p.PicklistTest__c}"/>
-        </apex:pageBlock>
-    </apex:form>
-</apex:page>

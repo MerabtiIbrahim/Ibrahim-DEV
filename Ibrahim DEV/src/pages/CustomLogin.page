@@ -1,5 +1,0 @@
-<apex:page docType="html-5.0" controller="CustomLogin" showHeader="false" sidebar="false" standardStylesheets="false">
-    <div>
-    <apex:outputText value="{!inputname}"/>
-    </div>
-</apex:page>

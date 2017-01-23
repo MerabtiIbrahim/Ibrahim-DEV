@@ -1,9 +1,0 @@
-<apex:page controller="acomptre_compte">
-  <apex:form >
-        <apex:inputField value="{!rubrique_a_inserer.montant__c}" />
-        <apex:inputField value="{!rubrique_a_inserer.Type__c}"/>
-        <apex:inputField value="{!rubrique_a_inserer.poste__c}"/>                    
-<apex:commandButton action="{!save}" value="Save record"/>
-    </apex:form>            
-
-</apex:page>
