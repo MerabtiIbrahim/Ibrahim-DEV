@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>rubrique</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>rubriques</value>
+    </caseValues>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- base2 --></label>
+        <name>base2__c</name>
+    </fields>
+    <fields>
+        <label><!-- montant --></label>
+        <name>montant__c</name>
+    </fields>
+    <fields>
+        <label><!-- poste --></label>
+        <name>poste__c</name>
+        <relationshipLabel><!-- rubriques --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

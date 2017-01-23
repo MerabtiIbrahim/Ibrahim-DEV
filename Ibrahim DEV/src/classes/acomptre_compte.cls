@@ -11,7 +11,6 @@ public class acomptre_compte {
    // public rubrique__c rubrique_a_inserer {get; set;} dsfsdfsdfsfs
     public rubrique__c rubrique_a_inserer {get; set;}
     public acomptre_compte(){
-    	system.debug('I am committing to git');
    rubrique_a_inserer =  new rubrique__c ();
     }
 

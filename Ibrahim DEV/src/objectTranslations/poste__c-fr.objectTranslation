@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>poste</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>postes</value>
+    </caseValues>
+    <fields>
+        <label><!-- PicklistRecordType2 --></label>
+        <name>PicklistRecordType2__c</name>
+        <picklistValues>
+            <masterLabel>value 1</masterLabel>
+            <translation><!-- value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>value 2</masterLabel>
+            <translation><!-- value 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>value 3</masterLabel>
+            <translation><!-- value 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PicklistTest --></label>
+        <name>PicklistTest__c</name>
+        <picklistValues>
+            <masterLabel>Bus</masterLabel>
+            <translation><!-- Bus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Taux_horaire_via_ech --></label>
+        <name>Taux_horaire_via_ech__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Présentation poste</layout>
+        <sections>
+            <label><!-- Liens Personnalisés --></label>
+            <section>Liens Personnalisés</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RecordType1</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RecordType2</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- RecordType1 --></label>
+        <name>RecordType1</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RecordType2 --></label>
+        <name>RecordType2</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- dfdfdfd --></label>
+        <name>dfdfdfd</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- generatePdf --></label>
+        <name>generatePdf</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- pdf --></label>
+        <name>pdf</name>
+    </webLinks>
+</CustomObjectTranslation>
