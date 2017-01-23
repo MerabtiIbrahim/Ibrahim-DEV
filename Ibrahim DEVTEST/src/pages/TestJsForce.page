@@ -1,0 +1,336 @@
+<apex:page showHeader="false"   sidebar="false">
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jsforce/1.6.3/jsforce.min.js"></script>
+    <html xmlns:ng="http://angularjs.org" ng-app="hello" lang="en">
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+            <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet"/>
+                <link href="https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet"/>
+                    <!-- Latest compiled and minified CSS -->
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+                            <!-- Optional theme -->
+                                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"/>
+                                    </head> 
+                                <style>
+                                    .class1{
+                                        
+                                        text-align: center;
+                                    }
+    .DR{
+        
+    }
+    .content{
+   display: table;
+   margin:auto;
+    }
+    .contentcell{
+         display: table-cell;
+    }
+
+    * {
+    margin: 0;
+    padding: 0;
+  	-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+
+
+	ul {
+		margin: 30px auto;
+		text-align: center;
+	}
+
+	li {
+		list-style: none;
+		position: relative;
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+	}
+
+	@-moz-keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+	}
+
+	@-webkit-keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+	}
+
+	@-o-keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+	}
+
+	@keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+	}
+
+	.round {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 120%;
+		height: 120%;
+		padding-top: 30px;		
+		text-decoration: none;		
+		text-align: center;
+		font-size: 25px;		
+		text-shadow: 0 1px 0 rgba(255,255,255,.7);
+		letter-spacing: -.065em;
+		font-family: "Hammersmith One", sans-serif;		
+		-webkit-transition: all .25s ease-in-out;
+		-o-transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		transition: all .25s ease-in-out;
+		box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+		border-radius: 300px;
+		z-index: 1;
+		border-width: 4px;
+		border-style: solid;
+	}
+
+	.round:hover {
+		width: 130%;
+		height: 130%;
+		left: -15%;
+		top: -15%;
+		font-size: 33px;
+		padding-top: 38px;
+		-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+		-o-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+		-moz-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+		box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+		z-index: 2;
+		border-size: 10px;
+		-webkit-transform: rotate(-360deg);
+		-moz-transform: rotate(-360deg);
+		-o-transform: rotate(-360deg);
+		transform: rotate(-360deg);
+	}
+
+	a.red {
+		background-color: rgba(239,57,50,1);
+		color: rgba(133,32,28,1);
+		border-color: rgba(133,32,28,.2);
+	}
+
+	a.red:hover {
+		color: rgba(239,57,50,1);
+	}
+
+	a.green {
+		background-color: rgba(1,151,171,1);
+		color: rgba(0,63,71,1);
+		border-color: rgba(0,63,71,.2);
+	}
+
+	a.green:hover {
+		color: rgba(1,151,171,1);
+	}
+
+	a.yellow {
+		background-color: rgba(252,227,1,1);
+		color: rgba(153,38,0,1);
+		border-color: rgba(153,38,0,.2);
+	}
+
+	a.yellow:hover {
+		color: rgba(252,227,1,1);
+	}
+
+	.round span.round {
+		display: block;
+		opacity: 0;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+		font-size: 1px;
+		border: none;
+		padding: 40% 20% 0 20%;
+		color: #fff;
+	}
+
+	.round span:hover {
+		opacity: .85;
+		font-size: 16px;
+		-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		-moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		-o-text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		text-shadow: 0 1px 1px rgba(0,0,0,.5);	
+	}
+
+	.green span {
+		background: rgba(0,63,71,.7);		
+	}
+
+	.red span {
+		background: rgba(133,32,28,.7);		
+	}
+
+	.yellow span {
+		background: rgba(161,145,0,.7);	
+
+	}
+
+    </style>
+    <div class="ng-app">
+        <div class="container">
+            <div ng-controller="ctrlRead">
+                 <ul>
+                <div ng-repeat="LesPDG in PDGrecords" class="col-sm-12 class1">
+                    <div class="PDG">
+                        <li><a href="#" ng-click="DecendrEnBas(LesPDG.Id,'PDG')" class="round green">{{LesPDG.Name}}<span class="round"><img src="http://www.yowzers.com/ccdata/images/smallMain_29_84.jpg"/></span></a></li> 
+                        <!-- <button type="button" class="btn btn-default btn-lg" ng-click="DecendrEnBas(LesPDG.Id,'PDG')">{{LesPDG.Name}}</button>--> 
+                        </div>
+                        </div>
+                        </ul>
+                        <div ng-show="DRclass" class="col-sm-12 class1" >
+                            <div class="DR content">
+                                <ul>
+                            <div ng-repeat="LesDr in DRrecords " class="contentcell" >
+                        <li><a href="#" ng-click="DecendrEnBas(LesDr.Id,'DR')"  class="round red">{{LesDr.Name}}<span class="round">That is, if you already have an account.</span></a></li> 
+                                    <!--<button type="button" class="btn btn-default btn-lg" ng-click="DecendrEnBas(LesDr.Id,'DR')">{{LesDr.Name}}</button> --> 
+                                    </div>
+                                        </ul>
+                                    </div>
+                                
+                                    </div>
+                                    <div ng-show="PMclass" class="col-sm-12 class1">
+                                         <div class="DR content">
+                                             <ul>
+                                        <div ng-repeat="LesPM in PMrecords" class="contentcell">
+                     <!--<button type="button" class="btn btn-default btn-lg" ng-click="DecendrEnBas(LesPM.Id,'PM')">{{LesPM.Name}}</button>--> 
+                     <li><a href="#" ng-click="DecendrEnBas(LesPM.Id,'PM')" class="round yellow">{{LesPM.Name}}<span class="round">That is, if you already have an account.</span></a></li> 
+
+                                                </div>
+                                                </ul>
+                                                </div>
+                                                </div>
+                                                <div ng-show="RCclass" class="col-sm-12 class1">
+                                                    <div class="RC content">
+                                                        <ul>
+                                                    <div ng-repeat="LesRC in RCrecords" class="contentcell">
+                                                        
+                       <!--<button type="button" class="btn btn-default btn-lg" ng-click="DecendrEnBas(LesRC.Id,'RC')">{{LesRC.Name}}</button>--> 
+                    <li><a href="#" ng-click="DecendrEnBas(LesRC.Id,'RC')" class="round green">{{LesRC.Name}}<span class="round">That is, if you already have an account.</span></a></li> 
+
+                                                            </div>
+                                                            </ul>
+                                                            </div>
+                                                            </div>
+                                                            
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            
+                                                            <!--- Javascript -->
+                                                                <script type="text/javascript">
+                                                                    function ctrlRead($scope){  
+                                                                    var conn = new jsforce.Connection({ accessToken: '{!$Api.Session_Id}' });  
+                                                                    var query = "SELECT Id, Name, Nom__c from PDG__c";
+                                                                    $scope.DRclass = false;
+                                                                    $scope.PMclass = false;
+                                                                    $scope.RCclass = false;
+                                                                    $scope.ChangeCategoriesViews = ChangeCategoriesViews;
+                                                                    $scope.DecendrEnBas = DecendrEnBas;
+                                                                    
+                                                                    conn.query(query , function(error, res) {
+                                                                        if (error) {
+                                                                            console.log("error");
+                                                                        } else {
+                                                                            $scope.PDGrecords = res.records;
+                                                                            $scope.$apply();
+                                                                        }
+                                                                    });
+                                                                    
+                                                                    function DecendrEnBas(idRecord,TypeRecord){
+                                                                        if(TypeRecord == 'DR'){
+                                                                            
+                                                                            conn.sobject("PM__c")
+                                                                            .find(
+                                                                                // conditions in JSON object
+                                                                                { DR__c : idRecord },
+                                                                                
+                                                                                { Id: 1,
+                                                                                 Name: 1
+                                                                                }
+                                                                            )
+                                                                            .execute(function(err, records) {
+                                                                                if (err) { 
+                                                                                    return console.error(err); 
+                                                                                }
+                                                                                console.log("fetched : " + records.length);
+                                                                                $scope.ChangeCategoriesViews(TypeRecord);
+                                                                                $scope.PMrecords = records;
+                                                                                $scope.$apply();
+                                                                            });
+                                                                            
+                                                                        }else if(TypeRecord == 'PM'){
+                                                                            
+                                                                            conn.sobject("RC__c")
+                                                                            .find(
+                                                                                // conditions in JSON object
+                                                                                { PM__c : idRecord },
+                                                                                
+                                                                                { Id: 1,
+                                                                                 Name: 1
+                                                                                }
+                                                                            )
+                                                                            .execute(function(err, records) {
+                                                                                if (err) { 
+                                                                                    return console.error(err); 
+                                                                                }
+                                                                                console.log("fetched : " + records.length);
+                                                                                $scope.ChangeCategoriesViews(TypeRecord);
+                                                                                $scope.RCrecords = records;
+                                                                                $scope.$apply();
+                                                                            });
+                                                                            
+                                                                        }else if(TypeRecord == 'PDG'){
+                                                                            conn.sobject("DR__c")
+                                                                            .find(
+                                                                                // conditions in JSON object
+                                                                                { PDG__c : idRecord },
+                                                                                
+                                                                                { Id: 1,
+                                                                                 Name: 1
+                                                                                }
+                                                                            )
+                                                                            .execute(function(err, records) {
+                                                                                if (err) { 
+                                                                                    return console.error(err); 
+                                                                                }
+                                                                                console.log("fetched : " + records.length);
+                                                                                $scope.ChangeCategoriesViews(TypeRecord);
+                                                                                $scope.DRrecords = records;
+                                                                                $scope.$apply();
+                                                                            }); 
+                                                                        }
+                                                                    }
+                                                                    
+                                                                    function ChangeCategoriesViews(TypeRecord){
+                                                                        if(TypeRecord == 'DR'){
+                                                                            $scope.PMclass = true;
+                                                                            $scope.RCclass = false;
+                                                                        }else if(TypeRecord == 'PM'){
+                                                                            $scope.RCclass = true;
+                                                                        }else if(TypeRecord == 'PDG'){
+                                                                            $scope.PMclass = false;
+                                                                            $scope.RCclass = false;
+                                                                            $scope.DRclass = true;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                
+                                                                </script>
+</html>
+</apex:page>

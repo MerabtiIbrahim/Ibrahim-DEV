@@ -1,0 +1,2 @@
+<apex:page Controller="MyControllerTest" action="{!redirect}">
+</apex:page>

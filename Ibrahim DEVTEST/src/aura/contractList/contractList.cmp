@@ -1,0 +1,44 @@
+<aura:component >
+
+    <aura:attribute name="contracts" type="Contract[]"/>
+
+    <div class="slds-card slds-p-top--medium">
+        <header class="slds-card__header">
+            <h3 class="slds-text-heading--small">Contracts</h3>
+        </header>
+        
+<div class="slds">
+     <table class="slds-table slds-table--bordered slds-table--striped">
+ <thead>
+ <tr>
+ <th scope="col"><span class="slds-truncate" style=" font-weight: bold">Numéro du Contract</span></th>
+ <th scope="col"><span class="slds-truncate" style=" font-weight: bold">Le status</span></th>
+ <th scope="col"><span class="slds-truncate" style=" font-weight: bold">Contract Term</span></th>
+ </tr>
+ </thead>
+ <tbody>
+     
+        <aura:renderIf isTrue="{!v.contracts.length > 0}">
+                   <aura:iteration items="{!v.contracts}" var="contract">
+     <tr>
+<c:contractItem contract="{!contract}"/>
+ </tr>
+                    
+                </aura:iteration>
+    <aura:set attribute="else">
+      <tr>The table is empty</tr>
+    </aura:set>
+  </aura:renderIf>
+     
+
+     </tbody>
+ 
+ </table>
+<div class="slds-button-group slds-grid--align-center" role="group">
+    
+   <ui:button class="slds-button slds-button--neutral" press="{!c.goBackToContactList}">Revenir à la liste des contracts </ui:button>
+</div> </div>
+            </div>
+
+
+</aura:component>

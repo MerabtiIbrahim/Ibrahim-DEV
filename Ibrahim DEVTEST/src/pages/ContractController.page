@@ -1,0 +1,5 @@
+<apex:page standardController="Contract" >
+    Hello {!$User.FirstName}!
+
+  <p>You are viewing the {!contract.AccountId} account.</p>
+</apex:page>

@@ -1,0 +1,5 @@
+<aura:component >
+	<c:welcomeComp ></c:welcomeComp>
+    <p>This is my first Lightning app</p>
+    <c:helloMessage message="Please, print my message"></c:helloMessage>
+</aura:component>

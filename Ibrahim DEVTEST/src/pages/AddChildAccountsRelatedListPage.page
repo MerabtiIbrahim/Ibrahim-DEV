@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="AddChildAccountsRelatedList">
+    <apex:form >
+    <apex:pageBlock title="Child Accounts">
+       
+           <apex:pageBlockTable id="table" var="Item" value="{!ChildAccounts}">
+        <apex:repeat var="f" value="{!$ObjectType.Account.FieldSets.Account_Field_set}">
+            <apex:column headerValue="{!f.label}">
+                <apex:InputField value="{!Item[f]}" />
+            </apex:column>
+        </apex:repeat>
+    </apex:pageBlockTable>
+        
+        <!--
+       <apex:pageBlockTable value="{!ChildAccounts}" var="Item">
+           <apex:repeat value="{!$ObjectType.Account.fieldsets.Account_Field_set}" var="fieldValue">
+    
+               <apex:outputField value="{!fieldValue}"/>-->
+<!--<apex:column value="{!Item[fieldValue]}" />
+           </apex:repeat>
+        </apex:pageBlockTable> -->
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<aura:component controller="LeadCollectorController" access="global">
+    <aura:attribute name="theLead" 
+        type="Lead" 
+        default="{ 'sobjectType': 'Lead',
+                   'Company': '',
+                   'FirstName': '',
+                   'LastName': '',
+                   'Email': '' }"/>
+    <form>
+
+        <ui:inputText value="{!v.theLead.Company}" label="Company" class="input"/>
+        <ui:inputText value="{!v.theLead.FirstName}" label="First" class="input"/>
+        <ui:inputText value="{!v.theLead.LastName}" label="Last" class="input" />
+        <ui:inputEmail value="{!v.theLead.Email}" label="Email" class="input" />
+        <ui:button label="Save" press="{!c.save}"/>
+    </form>
+</aura:component>
